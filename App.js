@@ -33,12 +33,12 @@ const App = () => {
 
 
   useEffect(()=>{
-    NativeModules.ToastExample.loadAppUsage(data=>{
+    NativeModules.ToastExample.loadAppUsage(err=>{
       
    
-    },err=>{
-      setAppIcon(err, "qsdas")
-      console.log(err)
+    },data=>{
+      setAppIcon(data, "<<<----")
+      console.log(data)
     })
   },[])
 
@@ -46,7 +46,7 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-      <Text>asdas</Text>
+      <Text>Phone Data</Text>
          <ScrollView >
            {
              appIcon.length > 0 && appIcon.map(item=>(
